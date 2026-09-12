@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>历史归档 · 2026-08-24 · 墨西哥 + 巴西 双站</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f0f2f5;color:#1f2329}
+  .topbar{height:56px;background:linear-gradient(135deg,#1f2937,#374151);color:#fff;padding:0 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .topbar h1{font-size:16px;font-weight:800;display:inline}
+  .topbar .date{font-size:13px;opacity:.85;margin-left:8px;font-weight:500}
+  .tabs{display:flex;gap:8px}
+  .tab{border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.12);color:#fff;font-size:13px;font-weight:700;padding:7px 16px;border-radius:999px;cursor:pointer;font-family:inherit}
+  .tab:disabled{opacity:.4;cursor:not-allowed}
+  .tab.active{background:#fff;color:#c8431a}
+  .tab.mlb.active{color:#1f7a4d}
+  .frame-wrap{position:absolute;top:56px;left:0;right:0;bottom:0;background:#fff}
+  iframe{width:100%;height:100%;border:none;display:block}
+  .empty{display:flex;align-items:center;justify-content:center;height:100%;color:#999;font-size:15px}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div><h1>📅 历史推送归档</h1><span class="date">2026-08-24</span></div>
+  <div class="tabs">
+    <button class="tab active" data-s="mlm" onclick="show('mlm')">🇲🇽 墨西哥 MLM</button>
+    <button class="tab mlb" data-s="mlb" onclick="show('mlb')">🇧🇷 巴西 MLB</button>
+  </div>
+</div>
+<div class="frame-wrap">
+  <iframe id="f-mlm" src="hist-20260824-mlm.html" style="display:block"></iframe>
+  <iframe id="f-mlb" src="hist-20260824-mlb.html" style="display:none"></iframe>
+</div>
+<script>
+function show(s){
+  var mlm=document.getElementById('f-mlm'), mlb=document.getElementById('f-mlb');
+  if(mlm){ mlm.style.display = (s==='mlm')?'block':'none'; }
+  if(mlb){ mlb.style.display = (s==='mlb')?'block':'none'; }
+  var tabs=document.querySelectorAll('.tab');
+  for(var i=0;i<tabs.length;i++){ tabs[i].classList.toggle('active', tabs[i].getAttribute('data-s')===s); }
+}
+</script>
+</body>
+</html>
