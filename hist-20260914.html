@@ -25,13 +25,13 @@
 <div class="topbar">
   <div><h1>📅 历史推送归档</h1><span class="date">2026-09-14</span></div>
   <div class="tabs">
-    <button class="tab" data-s="mlm" disabled onclick="show('mlm')">🇲🇽 墨西哥 MLM</button>
-    <button class="tab mlb active" data-s="mlb" onclick="show('mlb')">🇧🇷 巴西 MLB</button>
+    <button class="tab active" data-s="mlm" onclick="show('mlm')">🇲🇽 墨西哥 MLM</button>
+    <button class="tab mlb" data-s="mlb" onclick="show('mlb')">🇧🇷 巴西 MLB</button>
   </div>
 </div>
 <div class="frame-wrap">
-  <div class="empty" id="f-mlm" style="display:none">该日暂无墨西哥站推送</div>
-  <iframe id="f-mlb" src="hist-20260914-mlb.html" style="display:block"></iframe>
+  <iframe id="f-mlm" src="hist-20260914-mlm.html" style="display:block"></iframe>
+  <iframe id="f-mlb" src="hist-20260914-mlb.html" style="display:none"></iframe>
 </div>
 <script>
 function show(s){
