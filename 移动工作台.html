@@ -32,8 +32,8 @@
   .card ul { padding-left: 20px; margin: 6px 0; }
   .card li { font-size: 13.5px; margin: 5px 0; }
   table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 12.5px; }
-  /* 节庆表(fest-ev)：主标题不换行，括号元数据换行 */
-  .fest-name { white-space: nowrap; font-weight: 700; }
+  /* 节庆表(fest-ev)：主标题允许折行（长标题不再撑爆列宽），括号元数据换行 */
+  .fest-name { font-weight: 700; }
   .fest-meta { font-size: 11.5px; color: #888; margin-top: 2px; }
   /* 节庆日历卡片(cal-ev)：节庆/峰值日/距今 三列不换行 */
   .cal-ev td:nth-child(-n+3) { white-space: nowrap; }
@@ -46,6 +46,12 @@
   table.long-ev th:nth-child(2), table.long-ev td:nth-child(2) { width: 28%; }
   table.long-ev th:nth-child(3), table.long-ev td:nth-child(3) { width: 22%; }
   table.long-ev th:nth-child(4), table.long-ev td:nth-child(4) { width: 22%; }
+  /* 节庆表(fest-ev，3 列)：固定列宽，防长标题撑爆右两列 */
+  table.fest-ev { table-layout: fixed; }
+  table.fest-ev th, table.fest-ev td { word-break: break-word; overflow-wrap: anywhere; }
+  table.fest-ev th:nth-child(1), table.fest-ev td:nth-child(1) { width: 38%; }
+  table.fest-ev th:nth-child(2), table.fest-ev td:nth-child(2) { width: 30%; }
+  table.fest-ev th:nth-child(3), table.fest-ev td:nth-child(3) { width: 32%; }
   th { background: #fff1e6; color: #b53c14; text-align: left; padding: 7px 8px; font-weight: 700; }
   td { border: 1px solid #ffe2cf; padding: 6px 8px; vertical-align: top; }
   td .pt { font-weight: 700; color: #1a5c8a; }
