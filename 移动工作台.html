@@ -8,6 +8,11 @@
 <meta http-equiv="Expires" content="0">
 <title>美客多每日双站推送 · 墨西哥 + 巴西 · 2026-10-04 第一版</title>
 <style>
+  /* 🔧 2026-10-04 修复：09-30 恢复回填引入 var(--green)/var(--line) 但本文件从未定义 → 历史查看器按钮白底白字隐形。
+     此处补齐定义（--green 取 09-30 之前按钮硬编码原值 #16a34a）。勿删。 */
+  :root{--green:#16a34a;--line:#d6ecdd}
+</style>
+<style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #fff7f2; color: #2b2b2b; line-height: 1.6; }
   .hero { background: linear-gradient(135deg, #e8541e 0%, #f5872e 60%, #f7b733 100%); color: #fff; padding: 24px 22px 16px; }
